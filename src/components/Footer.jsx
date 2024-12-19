@@ -1,10 +1,15 @@
 import React from "react";
 
-const Footer = () => (
-  <footer className="bg-gray-800 text-white p-4 text-center">
-    <p>© 2024 Real Estate Website. All rights reserved.</p>
-  </footer>
-);
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 text-gray-300 py-4">
+      <div className="container mx-auto text-center">
+        <p>© 2024 Real Estate. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
+
 

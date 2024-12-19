@@ -1,30 +1,51 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ContactForm from './components/ContactForm';
-import PropertyCard from './components/PropertyCard';
-import PropertyList from './components/PropertyList';
-import AgentProfile from './pages/AgentProfile';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import PropertyDetails from './pages/PropertyDetails';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Properties from "./pages/Properties";
+import Rent from "./pages/Rent";
+import Agents from "./pages/Agents";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import ContactUs from "./pages/ContactUs";
+import PropertyDetails from "./pages/PropertyDetails";
+import PropertyCard from "./components/PropertyCard";
+
 
 const App = () => {
   return (
+    
+      
     <Router>
-      <Navbar />
-      <div className="container mx-auto p-4">
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/properties" element={<PropertyList />} />
-          <Route path="/property/:id" element={<PropertyDetail />} />
-          <Route path="/agents" element={<AgentProfile />} />
-          <Route path=" " element={<h2 className="text-center mt-10">Page Not Found</h2>} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={<Home />} />
+        
+        {/* Properties Page */}
+        <Route path="/properties" element={<Properties />} />
+        {/* Rent Page */}
+        <Route path="/rent" element={<Rent />} />
+        
+        {/* Agents Page */}
+        <Route path="/agents" element={<Agents />} />
+        
+        {/* Login Page */}
+        <Route path="/login" element={<Login />} />
+
+        {/*ContactUs page */}
+        <Route path="/contactus" element={<ContactUs />} />
+
+        {/*PropertyDetails Page */}
+        <Route path="/properties/:id" element={<PropertyDetails />} />
+
+        {/*PropertyCard components */}
+        <Route path="/propertyCard" element={<PropertyCard />} />
+        
+        {/* Dashboard Page */}
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </Router>
+    
   );
 };
 
-export default App;
-
+export default App; 
